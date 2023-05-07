@@ -1,6 +1,6 @@
 import faker from '@faker-js/faker';
 import { generateCPF, getStates } from '@brazilian-utils/brazilian-utils';
-import { User } from '@prisma/client';
+import { TicketStatus, User } from '@prisma/client';
 
 import { createUser } from './users-factory';
 import { prisma } from '@/config';
@@ -39,5 +39,67 @@ export function createhAddressWithCEP() {
     bairro: 'Itaim Bibi',
     cidade: 'São Paulo',
     uf: 'SP',
+  };
+}
+
+
+export function mockTicketByEnrollmentIdReturn() {
+  return {
+    id: 1,
+    ticketTypeId: 1,
+    enrollmentId: 1,
+    status: TicketStatus.PAID,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    TicketType: {
+      id: 1,
+      name: 'Teste',
+      price: 300,
+      isRemote: false,
+      includesHotel: true,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  };
+}
+
+export function mockAddressReturn() {
+  return {
+    id: 1,
+    name: 'John Doe',
+    cpf: '00898643115',
+    birthday: new Date(),
+    phone: '986855536',
+    userId: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    Address: [
+      {
+        id: 1,
+        cep: '12345678',
+        street: 'Main Street',
+        city: 'New York',
+        state: 'NY',
+        number: '123',
+        neighborhood: 'Downtown',
+        addressDetail: 'Apartment 456',
+        enrollmentId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ],
+  };
+}
+
+export function mockEnrollmentReturn() {
+  return {
+    id: 1,
+    name: 'John Doe',
+    cpf: '00898643115',
+    birthday: new Date(),
+    phone: '986855536',
+    userId: 1,
+    createdAt: new Date(),
+    updatedAt: new Date(),
   };
 }

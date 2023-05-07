@@ -23,3 +23,16 @@ export function generateCreditCardData() {
     cvv: faker.datatype.number({ min: 100, max: 999 }).toString(),
   };
 }
+
+
+export function paymentReturn() {
+  return {
+    id: 1,
+    ticketId: 1,
+    value: 300,
+    cardIssuer: faker.name.findName(),
+    cardLastDigits: faker.datatype.number({ min: 1000, max: 9999 }).toString(),
+    createdAt: new Date(),
+    updatedAt: new Date(),
+  };
+}
