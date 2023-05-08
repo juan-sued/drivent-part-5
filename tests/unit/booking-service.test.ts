@@ -112,7 +112,6 @@ describe('updateBooking function', () => {
   it('should erro if booking not exist', async () => {
     const userId = 1;
     const roomId = 1;
-    const bookingId = 1;
 
     jest.spyOn(bookingRepository, 'findByRoomId').mockResolvedValue(null);
 

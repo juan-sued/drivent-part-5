@@ -14,9 +14,10 @@ async function create({ roomId, userId }: CreateParams): Promise<Booking> {
 }
 
 async function findByRoomId(roomId: number) {
+  console.log(roomId)
   return prisma.booking.findMany({
     where: {
-      roomId,
+      roomId:roomId,
     },
     include: {
       Room: true,
