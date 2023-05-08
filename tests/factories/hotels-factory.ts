@@ -20,3 +20,36 @@ export async function createRoomWithHotelId(hotelId: number) {
     },
   });
 }
+
+
+export async function mockHotelReturn() {
+  return [
+    {
+      id: 1,
+      name: 'belo hotel',
+      image: 'image-teste',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  ];
+}
+
+export async function mockHotelIdReturn() {
+  return {
+    id: 1,
+    name: 'Teste',
+    image: 'teste image',
+    createdAt: new Date(),
+    updatedAt: new Date(),
+    Rooms: [
+      {
+        id: 1,
+        name: 'Teste',
+        capacity: 1,
+        hotelId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    ],
+  };
+}

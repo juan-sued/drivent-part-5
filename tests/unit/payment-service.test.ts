@@ -80,6 +80,3 @@ describe('paymentProcess function', () => {
   });
 });
 
-
-
-
