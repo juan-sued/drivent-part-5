@@ -294,7 +294,8 @@ describe('PUT /booking', () => {
         roomId: room.id,
         userId: user.id,
       });
-
+      
+      console.log(booking)
       const otherRoom = await createRoomWithHotelId(hotel.id);
 
       const response = await server.put(`/booking/${booking.id}`).set('Authorization', `Bearer ${token}`).send({
